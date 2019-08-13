@@ -6,7 +6,7 @@
 using namespace std;
 int main()
 {
-    command *c;
+    command *c = new command();
     string option;
     system("clear");
     c->list();
