@@ -6,12 +6,12 @@
 using namespace std;
 int main()
 {
-    command *c = new command();
+    command c;
     string option;
     system("clear");
-    c->list();
+    c.list();
     cout << ":";
     getline(cin, option);
-    cout << c->execute(option) << endl;
+    cout << c.execute(option) << endl;
     return 0;
 }

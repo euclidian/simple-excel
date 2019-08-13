@@ -4,6 +4,8 @@ using namespace std;
 class command
 {
 public:
+    command() {}  //constructor
+    ~command() {} //destructor
     void list()
     {
         cout << "New File (N)" << endl;
