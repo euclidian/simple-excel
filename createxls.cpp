@@ -10,8 +10,11 @@ int main()
     string option;
     system("clear");
     c.list();
-    cout << ":";
-    getline(cin, option);
-    cout << c.execute(option) << endl;
+    do
+    {
+        cout << ":";
+        getline(cin, option);
+        cout << c.execute(option) << endl;
+    } while (option != "E" && option != "Exit");
     return 0;
 }
