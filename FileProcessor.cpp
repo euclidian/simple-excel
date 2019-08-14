@@ -6,16 +6,17 @@ class FileProcessor
 public:
     FileProcessor() {}  //constructor
     ~FileProcessor() {} //destructor
-    string filename;
-    ofstream file;
+
     void createFile(string filename)
     {
-        this->filename = filename;
-        this->file.open(this->filename.c_str());
+        ofstream file(filename.c_str());
     }
-    void writeFile(string text)
+    void writeFile(string filename, string text)
     {
-        this->file << text;
+        ofstream file;
+        file.open(filename.c_str());
+        file<<text;
+        file.close();
     }
     void deleteFile(string filename)
     {
