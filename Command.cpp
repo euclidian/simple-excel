@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-class command
+class Command
 {
 public:
-    command() {}  //constructor
-    ~command() {} //destructor
+    Command() {}  //constructor
+    ~Command() {} //destructor
     void list()
     {
         cout << "New File (N)" << endl;

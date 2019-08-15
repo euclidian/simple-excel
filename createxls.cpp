@@ -1,12 +1,13 @@
 #include <iostream>
-#include <string.h>
 #include <cstdlib>
-#include "./command.cpp"
+#include "./Command.cpp"
+#include "./FileProcessor.cpp"
 
 using namespace std;
 int main()
 {
-    command c;
+    Command c;
+    FileProcessor fp;
     string option;
     system("clear");
     c.list();
