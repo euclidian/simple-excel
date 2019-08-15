@@ -1,5 +1,5 @@
 compile_createxls:
-	g++ createxls.cpp -o createxls.out
+	g++ createxls.cpp Command.cpp FileProcessor.cpp -o createxls.out 
 run_createxls:
 	./createxls.out
 compile_hello:

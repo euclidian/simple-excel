@@ -1,25 +1,22 @@
-#include <iostream>
-#include <fstream>
+#include "./FileProcessor.h"
 using namespace std;
-class FileProcessor
-{
-public:
-    FileProcessor() {}  //constructor
-    ~FileProcessor() {} //destructor
 
-    void createFile(string filename)
+
+    FileProcessor::FileProcessor() {}  //constructor
+    FileProcessor::~FileProcessor() {} //destructor
+
+    void FileProcessor::createFile(string filename)
     {
         ofstream file(filename.c_str());
     }
-    void writeFile(string filename, string text)
+    void FileProcessor::writeFile(string filename, string text)
     {
         ofstream file;
         file.open(filename.c_str());
         file<<text;
         file.close();
     }
-    void deleteFile(string filename)
+    void FileProcessor::deleteFile(string filename)
     {
         remove(filename.c_str());
     }
-};
