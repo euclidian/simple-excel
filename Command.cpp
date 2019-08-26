@@ -18,17 +18,20 @@ char *Command::execute(char *option)
     if (strcmp("New", option) == 0 || strcmp("N", option) == 0)
     {
         char *filename = new char[10];
-        char *x = new char[10];
-        char *y = new char[10];
+        int x;
+        int y;
         cin >> filename;
         cin >> x;
         cin >> y;
-        char *result = new char[strlen(x) + strlen(y) + 2];
+        char *result = new char[100];
         strcpy(result, "x:");
-        strcat(result, x);
+        char buffer[16];
+        snprintf(buffer, sizeof(buffer), "%d", x);
+        strcat(result, buffer);
         strcat(result, "\n");
         strcat(result, "y:");
-        strcat(result, y);
+        snprintf(buffer, sizeof(buffer), "%d", y);
+        strcat(result, buffer);
         fp.createFile(filename);
         fp.writeFile(filename, result);
         cout << "Success" << endl;
