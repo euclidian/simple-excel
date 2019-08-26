@@ -34,6 +34,8 @@ char *Command::execute(char *option)
         strcat(result, buffer);
         fp.createFile(filename);
         fp.writeFile(filename, result);
+        delete filename;
+        delete result;
         cout << "Success" << endl;
     }
     else if (strcmp("Load", option) == 0 || strcmp("O", option) == 0)
