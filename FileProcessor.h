@@ -9,8 +9,8 @@ public:
     FileProcessor();
     ~FileProcessor();
 
-    void createFile(string filename);
-    void writeFile(string filename, string text);
-    void deleteFile(string filename);
+    void createFile(char* filename);
+    void writeFile(char* filename, char* text);
+    void deleteFile(char* filename);
 };
 #endif

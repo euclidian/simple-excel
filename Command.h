@@ -9,6 +9,6 @@ public:
     Command();
     ~Command();
     void list();
-    string execute(string option);
+    char* execute(char* option);
 };
 #endif
