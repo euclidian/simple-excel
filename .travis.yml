@@ -19,7 +19,7 @@ jobs:
       - sudo cp -r ../googletest/include /usr/local/include
       - sudo cp -r ./googlemock/gtest/libgtest*.a /usr/local/lib/
       - sudo cp -r ./googlemock/libgmock*.a /usr/local/lib/
-      - cd ../
+      - cd ../../
       - make compile_test
 
     script:
