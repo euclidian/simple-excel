@@ -1,4 +1,5 @@
 #include "./Command.h"
+#include "./FileProcessor.h"
 using namespace std;
 bool is_file_open;
 Excel *e;

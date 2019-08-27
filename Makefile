@@ -6,3 +6,5 @@ compile_hello:
 	g++ helloworld.cpp -o helloworld.out
 run_hello:
 	./helloworld.out
+compile_test:
+	g++ Test.cpp -I googletest-release-1.8.0/googletest/include -std=gnu++11 -lgtest -lpthread

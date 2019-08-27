@@ -1,3 +1,5 @@
 *.out
 .vscode
 *.xls
+*.gch
+googletest-release-1.8.0
