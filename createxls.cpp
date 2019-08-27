@@ -12,9 +12,8 @@ int main()
     c.list();
     do
     {
-        cout << ":";
+        cout << ">>>";
         cin >> option;
-        cout << c.execute(option) << endl;
-    } while (option != "E" && option != "Exit");
+    } while (c.execute(option));
     return 0;
 }

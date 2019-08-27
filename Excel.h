@@ -9,6 +9,7 @@ public:
     int x;
     int y;
     Excel(int x,int y);
+    Excel();
     ~Excel();
     void setX(int x);
     void setY(int y);

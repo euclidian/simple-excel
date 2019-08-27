@@ -1,8 +1,12 @@
 #include "./Command.h"
-#include "./FileProcessor.h"
 using namespace std;
-
-Command::Command() {}  //constructor
+bool is_file_open;
+Excel *e;
+FileProcessor *fp;
+Command::Command()
+{
+    e = new Excel;
+} //constructor
 Command::~Command() {} //destructor
 void Command::list()
 {
@@ -12,9 +16,9 @@ void Command::list()
     cout << "Exit (E)" << endl
          << endl;
 }
-char *Command::execute(char *option)
+bool Command::execute(char *option)
 {
-    FileProcessor fp;
+
     if (strcmp("New", option) == 0 || strcmp("N", option) == 0)
     {
         char *filename = new char[10];
@@ -32,27 +36,44 @@ char *Command::execute(char *option)
         strcat(result, "y:");
         snprintf(buffer, sizeof(buffer), "%d", y);
         strcat(result, buffer);
-        fp.createFile(filename);
-        fp.writeFile(filename, result);
+        fp->createFile(filename);
+        fp->writeFile(filename, result);
         delete filename;
         delete result;
-        cout << "Success" << endl;
+        return true;
     }
     else if (strcmp("Load", option) == 0 || strcmp("O", option) == 0)
     {
-        cout << "Success" << endl;
+        char *filename = new char[10];
+        cin >> filename;
+        this->is_file_open = fp->loadFile(e, filename);
+        delete filename;
+        return true;
     }
     else if (strcmp("About", option) == 0 || strcmp("A", option) == 0)
     {
-        cout << "Success" << endl;
+        if (this->is_file_open)
+        {
+            cout << "x: " << e->getX() << endl;
+            cout << "y: " << e->getY() << endl;
+        }
+        else
+        {
+            cout << "File Belum Dibuka" << endl;
+        }
+        return true;
     }
     else if (strcmp("Exit", option) == 0 || strcmp("E", option) == 0)
     {
-        cout << "Success" << endl;
+        return false;
     }
     else
     {
-        cout << "Command Not Found : " << option << endl;
+        cout << "Command tidak ditemukan: " << option << endl;
+        return true;
     }
-    return option;
+}
+bool Command::isFileOpen()
+{
+    return this->is_file_open;
 }

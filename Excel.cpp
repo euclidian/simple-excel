@@ -2,10 +2,12 @@
 using namespace std;
 int x;
 int y;
-Excel::Excel(int x,int y) {
+Excel::Excel(int x, int y)
+{
     this->x = x;
     this->y = y;
-}  //constructor
+} //constructor
+Excel::Excel(){};
 Excel::~Excel() {} //destructor
 void Excel::setX(int x)
 {
