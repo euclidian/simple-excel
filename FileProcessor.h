@@ -2,15 +2,19 @@
 #define FILEPROCESSOR_H
 #include <iostream>
 #include <fstream>
+#include <string.h>
+#include <stdlib.h>
+#include "Excel.h"
 using namespace std;
 class FileProcessor
 {
 public:
     FileProcessor();
     ~FileProcessor();
-
-    void createFile(string filename);
-    void writeFile(string filename, string text);
-    void deleteFile(string filename);
+    void createFile(char *filename);
+    bool loadFile(Excel *e, char *filename);
+    void writeFile(char *filename, char *text);
+    void deleteFile(char *filename);
 };
+
 #endif
